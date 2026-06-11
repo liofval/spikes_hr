@@ -19,6 +19,21 @@
 <h1>SPIKES (in IVS) 2026 組織図</h1>
 <blockquote><strong>凡例</strong>: <code>D</code> = ディレクター / <code>P</code> = プランナー</blockquote>
 
+<h2>ロール階層</h2>
+<div class="mermaid">
+graph TD
+    R[代表]
+    D[ディレクター]
+    P[プランナー]
+    A["アシスタント<br/>（当日企画補佐）"]
+    C["クルー<br/>（当日会場補佐）"]
+    R --> D --> P --> A --> C
+
+    classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
+    class R,D,P,A,C role;
+</div>
+
+<h2>組織図</h2>
 <div class="mermaid">
 graph TD
     Onoda["小野田 芽依<br/>D<br/>学生代表・全体統括"]

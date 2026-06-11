@@ -4,6 +4,23 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 
 > **凡例**: `D` = ディレクター / `P` = プランナー
 
+## ロール階層
+
+```mermaid
+graph TD
+    R[代表]
+    D[ディレクター]
+    P[プランナー]
+    A["アシスタント<br/>（当日企画補佐）"]
+    C["クルー<br/>（当日会場補佐）"]
+    R --> D --> P --> A --> C
+
+    classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
+    class R,D,P,A,C role;
+```
+
+## 組織図
+
 ```mermaid
 graph TD
     Onoda["小野田 芽依<br/>D<br/>学生代表・全体統括"]
