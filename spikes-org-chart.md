@@ -35,6 +35,8 @@ graph TD
     ContentHQ --> PITCH["PITCH"]
     BLITZ --> Kurenai["紅 優行<br/>D"]
     BLITZ --> Yamada["山田 結理奈<br/>D"]
+    Kurenai --> Uji["宇治 大輝<br/>P"]
+    Yamada --> Uji
     STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
     SPIKATHON --> Kato["加藤 一路<br/>D"]
     SQUARE --> Sakamoto["坂元 柾毅<br/>D"]
@@ -110,6 +112,8 @@ graph TD
       Sakamoto2 --> Nishikawa2[西川 歩花]
       BLITZ --> Kurenai2[紅 優行]
       BLITZ --> Yamada2[山田 結理奈]
+      Kurenai2 --> Uji2[宇治 大輝]
+      Yamada2 --> Uji2
     end
 
     subgraph 人事組織
@@ -123,7 +127,7 @@ graph TD
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
     class CP,SNS,DATA,EV,INF,LP,CRM,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,GROW role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Yamada2,Onoda2 person;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Yamada2,Onoda2,Uji2 person;
 ```
 
 ## 元データ
