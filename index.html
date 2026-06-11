@@ -74,36 +74,49 @@ graph TD
 <h2>企画コンテンツ × 担当者マップ</h2>
 <div class="mermaid">
 graph TD
+    subgraph クリエイティブ
+      CREATIVE[クリエイティブ全般]
+      CREATIVE --> Shiratori2[白鳥 太智]
+    end
+
     subgraph マーケティング
       CP[コミュニティパートナー]
       SNS[SNS]
+      DATA[データ分析]
       EV[イベント・セミナー企画]
       INF[インフルエンサー]
       LP[LP]
       CRM[CRM]
-      SNS --> Aruga2[有賀 心咲]
+      GUILD[GUILD]
+      NOMAD[NOMAD]
+      SNS --> Aruga2[有賀 心咲<br/>Instagram]
+      SNS --> Tagami2[田上 睦己<br/>X]
+      DATA --> Tatsuzaki2[立崎 乃衣]
+      GUILD --> Ozawa2[小澤 剛]
+      Ozawa2 --> Yamashita2[山下 翼]
+      Ozawa2 --> Shimakawa2[島川 哲也]
+      NOMAD --> Kishida2[岸田 宗将]
     end
 
     subgraph コンテンツ
       PITCH[PITCH]
-      STAGE[SESSION / STAGE]
+      STAGE[STAGE]
       SPIKATHON[SPIKATHON]
+      SQUARE[SQUARE]
+      BLITZ[BLITZ]
       NW[ネットワーク]
-      NW --> SQUARE[SQUARE]
-      NW --> BLITZ["BLITZ（ライトニング）"]
       NW --> ROUND["ROUND（テーブル）"]
       NW --> MARKET["Market（ブース）"]
       POPUP[POPUP]
-      GUILD[GUILD]
 
       PITCH --> Udatsu2[宇田津 蓮]
+      Udatsu2 --> Saito2[齋藤 杏理]
       STAGE --> Matsuo2[松尾 妃奈乃]
       SPIKATHON --> Kato2[加藤 一路]
       SQUARE --> Sakamoto2[坂元 柾毅]
+      Sakamoto2 --> Nishikawa2[西川 歩花]
       BLITZ --> Kurenai2[紅 優行]
       BLITZ --> Yamada2[山田 結理奈]
-      POPUP --> Ozawa2[小澤 剛]
-      GUILD --> Ozawa2
     end
 
     subgraph 人事組織
@@ -113,8 +126,8 @@ graph TD
 
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
-    class CP,SNS,EV,INF,LP,CRM,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,GUILD,RECRUIT,GROW role;
-    class Aruga2,Udatsu2,Matsuo2,Kato2,Sakamoto2,Ozawa2,Kurenai2,Yamada2 person;
+    class CP,SNS,DATA,EV,INF,LP,CRM,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,GROW role;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Yamada2 person;
 </div>
 </body>
 </html>
