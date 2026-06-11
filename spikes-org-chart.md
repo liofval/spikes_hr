@@ -69,7 +69,7 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph マーケ・クリエイティブ
+    subgraph SG_MC ["マーケ・クリエイティブ"]
       CP[コミュニティパートナー]
       SNS[SNS]
       DATA[データ分析]
@@ -84,7 +84,7 @@ graph TD
       CREATIVE --> Shiratori2[白鳥 太智]
     end
 
-    subgraph 集客
+    subgraph SG_PROMO ["集客"]
       GUILD[GUILD]
       NOMAD[NOMAD]
       GUILD --> Ozawa2[小澤 剛]
@@ -93,7 +93,7 @@ graph TD
       NOMAD --> Kishida2[岸田 宗将]
     end
 
-    subgraph コンテンツ
+    subgraph SG_CONT ["コンテンツ"]
       PITCH[PITCH]
       STAGE[STAGE]
       SPIKATHON[SPIKATHON]
@@ -116,7 +116,7 @@ graph TD
       Yamada2 --> Uji2
     end
 
-    subgraph 人事組織
+    subgraph SG_HR ["人事組織"]
       RECRUIT[採用]
       GROW[管理・育成]
       RECRUIT --> Onoda2[小野田 芽依]
