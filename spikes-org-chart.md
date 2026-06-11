@@ -7,12 +7,13 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 ## ロール階層
 
 ```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 25}, 'themeVariables': {'fontSize': '11px'}}}%%
 graph TD
-    R["代表<br/>━━━━━<br/>小野田 芽依<br/>小澤 剛<br/>岸田 宗将"]
-    D["ディレクター<br/>━━━━━<br/>有賀 心咲<br/>立崎 乃衣<br/>紅 優行<br/>山田 結理奈<br/>松尾 妃奈乃<br/>加藤 一路<br/>坂元 柾毅<br/>宇田津 蓮<br/>白鳥 太智"]
-    P["プランナー<br/>━━━━━<br/>田上 睦己<br/>西川 歩花<br/>齋藤 杏理<br/>東田 蒼人<br/>山下 翼<br/>島川 哲也<br/>宇治 大輝"]
-    A["アシスタント<br/>（当日企画補佐）<br/>━━━━━<br/>（TBD）"]
-    C["クルー<br/>（当日会場補佐）<br/>━━━━━<br/>（TBD）"]
+    R["代表<br/>小野田・小澤・岸田"]
+    D["ディレクター<br/>有賀・立崎・紅・山田・松尾<br/>加藤・坂元・宇田津・白鳥"]
+    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治"]
+    A["アシスタント（当日企画補佐）<br/>（TBD）"]
+    C["クルー（当日会場補佐）<br/>（TBD）"]
     R --> D --> P --> A --> C
 
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
