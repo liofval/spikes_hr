@@ -74,7 +74,6 @@ graph TD
       DATA[データ分析]
       EV[イベント・セミナー企画]
       LP[LP]
-      CRM[CRM]
       CREATIVE[クリエイティブ全般]
       SNS --> Aruga2[有賀 心咲<br/>Instagram]
       SNS --> Tagami2[田上 睦己<br/>X]
@@ -125,7 +124,7 @@ graph TD
 
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
-    class SNS,DATA,EV,LP,CRM,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT role;
+    class SNS,DATA,EV,LP,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT role;
     class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2 person;
 ```
 
