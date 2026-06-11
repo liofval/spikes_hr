@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>SPIKES 2026 組織図プレビュー</title>
+<style>
+  body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 1400px; margin: 24px auto; padding: 0 16px; color: #1a1a1a; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; margin-top: 32px; }
+  blockquote { background: #f3f4f6; border-left: 4px solid #2e5aa8; padding: 8px 12px; margin: 12px 0; }
+  .mermaid { background: #fff; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; overflow-x: auto; }
+</style>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, theme: "default", securityLevel: "loose" });
+</script>
+</head>
+<body>
+<h1>SPIKES (in IVS) 2026 組織図</h1>
+<blockquote><strong>凡例</strong>: <code>D</code> = ディレクター / <code>P</code> = プランナー</blockquote>
+
+<div class="mermaid">
+graph TD
+    Onoda["小野田 芽依<br/>D<br/>学生代表・全体統括"]
+
+    Onoda --> MktHQ["集客・マーケティング統括"]
+    Onoda --> CreativeHQ["クリエイティブ"]
+    Onoda --> ContentHQ["コンテンツ統括"]
+    Onoda --> PlannerHQ["プランナー"]
+    Onoda --> OpsHQ["運営・管理"]
+
+    MktHQ --> Aruga["有賀 心咲<br/>D<br/>Instagram発信"]
+    MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>データ分析"]
+    MktHQ --> Ota["太田 智也<br/>東西代表マネジメント"]
+    Aruga --> Tagami["田上 睦己<br/>P<br/>X発信"]
+    Tatsuzaki --> Tagami
+    Ota --> GUILD["GUILD"]
+    Ota --> NOMAD["NOMAD"]
+    GUILD --> Ozawa["小澤 剛<br/>D"]
+    Ozawa --> Yamashita["山下 翼<br/>P"]
+    Ozawa --> Shimakawa["島川 哲也<br/>P"]
+    NOMAD --> Kishida["岸田 宗将<br/>D"]
+
+    ContentHQ --> BLITZ["BLITZ"]
+    ContentHQ --> STAGE["STAGE"]
+    ContentHQ --> SPIKATHON["SPIKATHON"]
+    ContentHQ --> SQUARE["SQUARE"]
+    ContentHQ --> PITCH["PITCH"]
+    BLITZ --> Kurenai["紅 優行<br/>D"]
+    BLITZ --> Yamada["山田 結理奈<br/>D"]
+    STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
+    SPIKATHON --> Kato["加藤 一路<br/>D"]
+    SQUARE --> Sakamoto["坂元 柾毅<br/>D"]
+    Sakamoto --> Nishikawa["西川 歩花<br/>P"]
+    PITCH --> Udatsu["宇田津 蓮<br/>D"]
+    Udatsu --> Saito["齋藤 杏理<br/>P"]
+
+    CreativeHQ --> Shiratori["白鳥 太智<br/>D"]
+
+    PlannerHQ --> Azumada["東田 蒼人<br/>P"]
+
+    OpsHQ --> Yoshimoto["吉本<br/>オペレーション（TBD）"]
+
+    classDef head fill:#1f3a68,stroke:#fff,color:#fff;
+    classDef group fill:#2e5aa8,stroke:#fff,color:#fff;
+    classDef tbd fill:#c0392b,stroke:#fff,color:#fff;
+    class Onoda head;
+    class MktHQ,ContentHQ,CreativeHQ,OpsHQ,PlannerHQ group;
+    class BLITZ,STAGE,SPIKATHON,SQUARE,PITCH group;
+    class GUILD,NOMAD group;
+    class Yoshimoto tbd;
+</div>
+
+<h2>企画コンテンツ × 担当者マップ</h2>
+<div class="mermaid">
+graph TD
+    subgraph マーケティング
+      CP[コミュニティパートナー]
+      SNS[SNS]
+      EV[イベント・セミナー企画]
+      INF[インフルエンサー]
+      LP[LP]
+      CRM[CRM]
+      SNS --> Aruga2[有賀 心咲]
+    end
+
+    subgraph コンテンツ
+      PITCH[PITCH]
+      STAGE[SESSION / STAGE]
+      SPIKATHON[SPIKATHON]
+      NW[ネットワーク]
+      NW --> SQUARE[SQUARE]
+      NW --> BLITZ["BLITZ（ライトニング）"]
+      NW --> ROUND["ROUND（テーブル）"]
+      NW --> MARKET["Market（ブース）"]
+      POPUP[POPUP]
+      GUILD[GUILD]
+
+      PITCH --> Udatsu2[宇田津 蓮]
+      STAGE --> Matsuo2[松尾 妃奈乃]
+      SPIKATHON --> Kato2[加藤 一路]
+      SQUARE --> Sakamoto2[坂元 柾毅]
+      BLITZ --> Kurenai2[紅 優行]
+      BLITZ --> Yamada2[山田 結理奈]
+      POPUP --> Ozawa2[小澤 剛]
+      GUILD --> Ozawa2
+    end
+
+    subgraph 人事組織
+      RECRUIT[採用]
+      GROW[管理・育成]
+    end
+
+    classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
+    classDef person fill:#f2b84b,stroke:#333,color:#111;
+    class CP,SNS,EV,INF,LP,CRM,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,GUILD,RECRUIT,GROW role;
+    class Aruga2,Udatsu2,Matsuo2,Kato2,Sakamoto2,Ozawa2,Kurenai2,Yamada2 person;
+</div>
+</body>
+</html>
