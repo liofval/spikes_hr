@@ -16,7 +16,7 @@ graph TD
 
     %% マーケ・クリエイティブ
     MktHQ --> Aruga["有賀 心咲<br/>D<br/>Instagram発信"]
-    MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>データ分析"]
+    MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>マーケ全般<br/>データ分析"]
     MktHQ --> Shiratori["白鳥 太智<br/>D<br/>クリエイティブ"]
     Aruga --> Tagami["田上 睦己<br/>P<br/>X発信"]
     Tatsuzaki --> Tagami
@@ -81,6 +81,7 @@ graph TD
       SNS --> Aruga2[有賀 心咲<br/>Instagram]
       SNS --> Tagami2[田上 睦己<br/>X]
       DATA --> Tatsuzaki2[立崎 乃衣]
+      LP --> Onoda3[小野田 芽依]
       CREATIVE --> Shiratori2[白鳥 太智]
       CREATIVE --> Shimakawa3[島川 哲也]
     end
@@ -88,6 +89,7 @@ graph TD
     subgraph SG_PROMO ["集客"]
       GUILD[GUILD]
       NOMAD[NOMAD]
+      GUILD --> POPUP[POPUP]
       GUILD --> Ozawa2[小澤 剛]
       Ozawa2 --> Yamashita2[山下 翼]
       Ozawa2 --> Shimakawa2[島川 哲也]
@@ -103,7 +105,6 @@ graph TD
       NW[ネットワーク]
       NW --> ROUND["ROUND（テーブル）"]
       NW --> MARKET["Market（ブース）"]
-      POPUP[POPUP]
 
       PITCH --> Udatsu2[宇田津 蓮]
       Udatsu2 --> Saito2[齋藤 杏理]
@@ -128,7 +129,7 @@ graph TD
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
     class CP,SNS,DATA,EV,INF,LP,CRM,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,GROW role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Uji2 person;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2 person;
 ```
 
 ## 元データ
