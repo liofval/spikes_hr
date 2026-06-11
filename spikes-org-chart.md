@@ -8,19 +8,22 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 graph TD
     Onoda["小野田 芽依<br/>D<br/>学生代表・全体統括"]
 
-    Onoda --> CreativeHQ["クリエイティブ"]
-    Onoda --> MktHQ["集客・マーケティング統括"]
+    Onoda --> MktHQ["マーケ・クリエイティブ"]
+    Onoda --> PromoHQ["集客"]
     Onoda --> ContentHQ["コンテンツ統括"]
     Onoda --> PlannerHQ["プランナー"]
     Onoda --> OpsHQ["運営・管理"]
 
-    %% 集客
+    %% マーケ・クリエイティブ
     MktHQ --> Aruga["有賀 心咲<br/>D<br/>Instagram発信"]
     MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>データ分析"]
+    MktHQ --> Shiratori["白鳥 太智<br/>D<br/>クリエイティブ"]
     Aruga --> Tagami["田上 睦己<br/>P<br/>X発信"]
     Tatsuzaki --> Tagami
-    Ota --> GUILD["GUILD"]
-    Ota --> NOMAD["NOMAD"]
+
+    %% 集客
+    PromoHQ --> GUILD["GUILD"]
+    PromoHQ --> NOMAD["NOMAD"]
     GUILD --> Ozawa["小澤 剛<br/>D"]
     Ozawa --> Yamashita["山下 翼<br/>P"]
     Ozawa --> Shimakawa["島川 哲也<br/>P"]
@@ -43,9 +46,6 @@ graph TD
     PITCH --> Udatsu["宇田津 蓮<br/>D"]
     Udatsu --> Saito["齋藤 杏理<br/>P"]
 
-    %% クリエイティブ
-    CreativeHQ --> Shiratori["白鳥 太智<br/>D"]
-
     %% プランナー
     PlannerHQ --> Azumada["東田 蒼人<br/>P"]
 
@@ -57,7 +57,7 @@ graph TD
     classDef group fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef tbd fill:#c0392b,stroke:#fff,color:#fff;
     class Onoda head;
-    class MktHQ,ContentHQ,CreativeHQ,OpsHQ,PlannerHQ group;
+    class MktHQ,PromoHQ,ContentHQ,OpsHQ,PlannerHQ group;
     class BLITZ,STAGE,SPIKATHON,SQUARE,PITCH group;
     class GUILD,NOMAD group;
     class Yoshimoto tbd;
@@ -69,12 +69,7 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph クリエイティブ
-      CREATIVE[クリエイティブ全般]
-      CREATIVE --> Shiratori2[白鳥 太智]
-    end
-
-    subgraph マーケティング
+    subgraph マーケ・クリエイティブ
       CP[コミュニティパートナー]
       SNS[SNS]
       DATA[データ分析]
@@ -82,11 +77,16 @@ graph TD
       INF[インフルエンサー]
       LP[LP]
       CRM[CRM]
-      GUILD[GUILD]
-      NOMAD[NOMAD]
+      CREATIVE[クリエイティブ全般]
       SNS --> Aruga2[有賀 心咲<br/>Instagram]
       SNS --> Tagami2[田上 睦己<br/>X]
       DATA --> Tatsuzaki2[立崎 乃衣]
+      CREATIVE --> Shiratori2[白鳥 太智]
+    end
+
+    subgraph 集客
+      GUILD[GUILD]
+      NOMAD[NOMAD]
       GUILD --> Ozawa2[小澤 剛]
       Ozawa2 --> Yamashita2[山下 翼]
       Ozawa2 --> Shimakawa2[島川 哲也]
