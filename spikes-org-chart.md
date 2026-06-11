@@ -122,13 +122,13 @@ graph TD
       GROW[管理・育成]
       RECRUIT --> Onoda2[小野田 芽依]
       RECRUIT --> Matsuo3[松尾 妃奈乃]
-      RECRUIT --> Kurenai2
+      RECRUIT --> Kurenai3[紅 優行]
     end
 
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
     class CP,SNS,DATA,EV,INF,LP,CRM,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,GROW role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Yamada2,Onoda2,Uji2 person;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Uji2 person;
 ```
 
 ## 元データ
