@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>SPIKES 2026 — 当日までのスケジュール</title>
+<style>
+  :root {
+    --primary: #2e5aa8;
+    --primary-dark: #1f3a68;
+    --bg: #f6f7fb;
+    --card-bg: #fff;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --done: #10b981;
+    --warn: #f59e0b;
+    --todo: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 64px; }
+  .back { font-size: 13px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--primary); }
+  h1 { font-size: 24px; margin: 16px 0 8px; color: var(--primary-dark); }
+  .subtitle { color: var(--muted); margin: 0 0 32px; font-size: 14px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; color: var(--primary-dark); }
+
+  /* Calendar */
+  .calendar { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cal-item { padding: 14px; border-left: 3px solid var(--primary); background: #fafbfd; border-radius: 6px; }
+  .cal-date { font-size: 12px; color: var(--muted); margin: 0 0 4px; }
+  .cal-title { font-size: 14px; font-weight: 600; margin: 0; }
+  .cal-item.milestone { border-left-color: var(--warn); background: #fffaf0; }
+  .cal-item.event-day { border-left-color: var(--done); background: #ecfdf5; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  th, td { padding: 10px 12px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--border); }
+  th { background: #f9fafb; color: var(--primary-dark); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:last-child td { border-bottom: 0; }
+  tr:hover td { background: #fafbfd; }
+  .status { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .status.done { background: #d1fae5; color: #065f46; }
+  .status.progress { background: #fef3c7; color: #92400e; }
+  .status.todo { background: #e5e7eb; color: #374151; }
+  .placeholder { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← ホームに戻る</a>
+  <h1>当日までのスケジュール</h1>
+  <p class="subtitle">主要マイルストーン・担当タスクの対応テーブル（プレースホルダー）</p>
+
+  <h2>📅 マイルストーンカレンダー</h2>
+  <div class="calendar">
+    <div class="cal-grid">
+      <div class="cal-item">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">キックオフ／全体MTG</p>
+      </div>
+      <div class="cal-item milestone">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">LP公開・登録受付開始</p>
+      </div>
+      <div class="cal-item milestone">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">ホスト・ゲスト確定</p>
+      </div>
+      <div class="cal-item milestone">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">SNS本格運用開始</p>
+      </div>
+      <div class="cal-item milestone">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">リハーサル／前日設営</p>
+      </div>
+      <div class="cal-item event-day">
+        <p class="cal-date">2026-XX-XX</p>
+        <p class="cal-title">本番（IVS当日）</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>📋 対応テーブル</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">タスク</th>
+        <th style="width: 18%;">カテゴリ</th>
+        <th style="width: 18%;">担当</th>
+        <th style="width: 14%;">期日</th>
+        <th style="width: 10%;">状況</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LP公開準備</td>
+        <td>マーケ・クリエイティブ</td>
+        <td>小野田 / 白鳥</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status progress">進行中</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>SNS発信スケジュール策定</td>
+        <td>マーケ・クリエイティブ</td>
+        <td>有賀 / 田上</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>GUILD募集</td>
+        <td>集客</td>
+        <td>小澤</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>NOMAD募集</td>
+        <td>集客</td>
+        <td>岸田</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>BLITZ コンテンツ設計</td>
+        <td>コンテンツ</td>
+        <td>紅 / 山田</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>STAGE 企画</td>
+        <td>コンテンツ</td>
+        <td>松尾</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>SPIKATHON 設計</td>
+        <td>コンテンツ</td>
+        <td>加藤</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>SQUARE 企画</td>
+        <td>コンテンツ</td>
+        <td>坂元 / 西川</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>PITCH 企画</td>
+        <td>コンテンツ</td>
+        <td>宇田津 / 齋藤</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>採用活動</td>
+        <td>人事</td>
+        <td>小野田 / 松尾 / 紅</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status progress">進行中</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+      <tr>
+        <td>当日オペレーション設計</td>
+        <td>運営・管理</td>
+        <td>太田 / 吉本</td>
+        <td class="placeholder">未定</td>
+        <td><span class="status todo">未着手</span></td>
+        <td class="placeholder">—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
