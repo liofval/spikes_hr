@@ -5,20 +5,24 @@
 <title>SPIKES 2026 — 当日までのスケジュール</title>
 <style>
   :root {
-    --primary: #2e5aa8;
-    --primary-dark: #1f3a68;
-    --bg: #f6f7fb;
-    --card-bg: #fff;
-    --text: #1a1a1a;
-    --muted: #6b7280;
-    --border: #e5e7eb;
-    --task: #2e5aa8;
-    --task-bg: #eef3fb;
-    --event: #e11d48;
-    --event-bg: #fff1f3;
-    --done: #10b981;
-    --warn: #f59e0b;
+    --bg: #2c3340;
+    --bg-elev: #353d4c;
+    --line: #4a5360;
+    --text: #e8eaed;
+    --muted: #9aa3b0;
+    --primary: #6ea8ff;
+    --task: #6ea8ff;
+    --task-bg: rgba(110, 168, 255, 0.18);
+    --event: #ff6b8a;
+    --event-bg: rgba(255, 107, 138, 0.18);
+    --done: #4ade80;
+    --done-bg: rgba(74, 222, 128, 0.18);
+    --warn: #fbbf24;
+    --warn-bg: rgba(251, 191, 36, 0.18);
     --todo: #9ca3af;
+    --todo-bg: rgba(156, 163, 175, 0.18);
+    --tag-cat: #c084fc;
+    --tag-cat-bg: rgba(192, 132, 252, 0.18);
   }
   * { box-sizing: border-box; }
   body {
@@ -27,191 +31,268 @@
     color: var(--text);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
   }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 32px 24px 96px; }
   .back { font-size: 13px; color: var(--muted); text-decoration: none; }
-  .back:hover { color: var(--primary); }
-  h1 { font-size: 24px; margin: 16px 0 8px; color: var(--primary-dark); }
-  .subtitle { color: var(--muted); margin: 0 0 32px; font-size: 14px; }
+  .back:hover { color: var(--text); }
+  h1 { font-size: 32px; margin: 16px 0 8px; color: var(--text); font-weight: 800; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); margin: 0 0 40px; font-size: 14px; }
 
-  /* Two columns */
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+  /* Year heading */
+  .year {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 40px 0 24px;
+    color: var(--text);
+    padding-left: 0;
   }
-  @media (max-width: 768px) {
-    .split { grid-template-columns: 1fr; }
-  }
-  .col {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-  }
-  .col-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 14px;
-    margin-bottom: 16px;
-    border-bottom: 2px solid var(--border);
-  }
-  .col-dot { width: 14px; height: 14px; border-radius: 50%; }
-  .col.tasks .col-dot { background: var(--task); }
-  .col.events .col-dot { background: var(--event); }
-  .col-title { font-size: 16px; font-weight: 700; margin: 0; }
-  .col.tasks .col-title { color: var(--task); }
-  .col.events .col-title { color: var(--event); }
-  .col-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+  .year:first-of-type { margin-top: 0; }
 
-  /* Month label */
-  .month {
-    display: inline-block;
-    font-size: 11px;
+  /* Timeline (single thread) */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .month-label {
+    font-size: 13px;
     font-weight: 700;
-    color: var(--primary-dark);
-    background: #e0e7f3;
-    padding: 3px 10px;
-    border-radius: 999px;
-    margin: 16px 0 10px;
-    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin: 24px 0 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
-  .month:first-child { margin-top: 0; }
 
-  /* Item card */
-  .item {
-    padding: 12px 14px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    border: 1px solid var(--border);
+  .entry {
+    position: relative;
+    margin-bottom: 18px;
   }
-  .item:last-child { margin-bottom: 0; }
-  .col.tasks .item { background: var(--task-bg); border-color: #d6e0f0; }
-  .col.events .item { background: var(--event-bg); border-color: #f6cbd2; }
+  .entry:last-child { margin-bottom: 0; }
 
-  .item-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
-  .item-date { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; }
-  .item-title { font-size: 14px; font-weight: 600; margin: 0 0 4px; }
-  .col.events .item-title { color: var(--event); }
-  .item-meta { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.6; }
-  .item-meta strong { color: #374151; font-weight: 600; }
+  .dot {
+    position: absolute;
+    left: -32px;
+    top: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--line);
+    z-index: 1;
+  }
+  .entry.task .dot { border-color: var(--task); }
+  .entry.event .dot { border-color: var(--event); background: var(--event); }
 
-  .status { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 10px; font-weight: 600; }
-  .status.done { background: #d1fae5; color: #065f46; }
-  .status.progress { background: #fef3c7; color: #92400e; }
-  .status.todo { background: #e5e7eb; color: #374151; }
+  .card {
+    background: var(--bg-elev);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid transparent;
+  }
+  .entry.event .card {
+    border-color: rgba(255, 107, 138, 0.35);
+    background: linear-gradient(135deg, var(--bg-elev) 0%, rgba(255, 107, 138, 0.08) 100%);
+  }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .head-icon { font-size: 16px; flex-shrink: 0; }
+  .head-title { font-size: 15px; font-weight: 700; margin: 0; flex: 1; color: var(--text); }
+  .entry.event .head-title { color: var(--event); }
+  .head-date { font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .desc { font-size: 13px; color: #c8cdd6; margin: 0 0 10px; line-height: 1.6; }
+  .desc:last-child { margin-bottom: 0; }
+
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+  .tag.task { background: var(--task-bg); color: var(--task); }
+  .tag.event { background: var(--event-bg); color: var(--event); }
+  .tag.cat { background: var(--tag-cat-bg); color: var(--tag-cat); }
+  .tag.done { background: var(--done-bg); color: var(--done); }
+  .tag.progress { background: var(--warn-bg); color: var(--warn); }
+  .tag.todo { background: var(--todo-bg); color: #c8cdd6; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <a class="back" href="index.html">← ホームに戻る</a>
-  <h1>当日までのスケジュール</h1>
-  <p class="subtitle">タスクとイベントを縦2列で並列表示（暫定）</p>
+  <h1>Timeline</h1>
+  <p class="subtitle">当日までのタスクとイベントを時系列で接続</p>
 
-  <div class="split">
+  <h2 class="year">2026年</h2>
 
-    <!-- Tasks column -->
-    <section class="col tasks">
-      <div class="col-head">
-        <span class="col-dot"></span>
-        <h2 class="col-title">タスク</h2>
-        <span class="col-count">5件</span>
-      </div>
+  <div class="timeline">
 
-      <div class="month">2026年 6月</div>
+    <div class="month-label">6月</div>
 
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">6月中</span>
-          <span class="status progress">進行中</span>
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">📝</span>
+          <h3 class="head-title">LP公開準備</h3>
+          <span class="head-date">6月中</span>
         </div>
-        <p class="item-title">LP公開準備</p>
-        <p class="item-meta"><strong>担当:</strong> 小野田／白鳥　<strong>カテゴリ:</strong> マーケ・クリエイティブ</p>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">6月中</span>
-          <span class="status progress">進行中</span>
+        <p class="desc">担当: 小野田／白鳥</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">マーケ・クリエイティブ</span>
+          <span class="tag progress">進行中</span>
         </div>
-        <p class="item-title">採用活動</p>
-        <p class="item-meta"><strong>担当:</strong> 小野田／松尾／紅　<strong>カテゴリ:</strong> 人事</p>
       </div>
+    </div>
 
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">6月後半</span>
-          <span class="status todo">未着手</span>
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">👥</span>
+          <h3 class="head-title">採用活動</h3>
+          <span class="head-date">6月中</span>
         </div>
-        <p class="item-title">SNS発信スケジュール策定</p>
-        <p class="item-meta"><strong>担当:</strong> 有賀（Instagram）／田上（X）　<strong>カテゴリ:</strong> マーケ</p>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">6月後半</span>
-          <span class="status todo">未着手</span>
+        <p class="desc">担当: 小野田／松尾／紅</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">人事</span>
+          <span class="tag progress">進行中</span>
         </div>
-        <p class="item-title">GUILD／NOMAD募集</p>
-        <p class="item-meta"><strong>担当:</strong> 小澤（GUILD）／岸田（NOMAD）　<strong>カテゴリ:</strong> 集客</p>
       </div>
+    </div>
 
-      <div class="month">2026年 7月</div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">7月前半</span>
-          <span class="status todo">未着手</span>
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">📣</span>
+          <h3 class="head-title">SNS発信スケジュール策定</h3>
+          <span class="head-date">6月後半</span>
         </div>
-        <p class="item-title">各コンテンツ最終調整</p>
-        <p class="item-meta"><strong>担当:</strong> BLITZ／STAGE／SPIKATHON／SQUARE／PITCH の各リード</p>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">6/30（前日）</span>
-          <span class="status todo">未着手</span>
+        <p class="desc">担当: 有賀（Instagram）／田上（X）</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">マーケ</span>
+          <span class="tag todo">未着手</span>
         </div>
-        <p class="item-title">リハーサル／前日設営</p>
-        <p class="item-meta"><strong>担当:</strong> 太田／吉本　<strong>カテゴリ:</strong> 運営・管理</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Events column -->
-    <section class="col events">
-      <div class="col-head">
-        <span class="col-dot"></span>
-        <h2 class="col-title">イベント・本番</h2>
-        <span class="col-count">3件</span>
-      </div>
-
-      <div class="month">2026年 7月</div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">2026-07-01（火）</span>
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🤝</span>
+          <h3 class="head-title">GUILD／NOMAD募集</h3>
+          <span class="head-date">6月後半</span>
         </div>
-        <p class="item-title">IVS 当日 — Day 1</p>
-        <p class="item-meta">本番1日目</p>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">2026-07-02（水）</span>
+        <p class="desc">担当: 小澤（GUILD）／岸田（NOMAD）</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">集客</span>
+          <span class="tag todo">未着手</span>
         </div>
-        <p class="item-title">IVS 当日 — Day 2</p>
-        <p class="item-meta">本番2日目</p>
       </div>
+    </div>
 
-      <div class="item">
-        <div class="item-head">
-          <span class="item-date">2026-07-03（木）</span>
+    <div class="month-label">7月</div>
+
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🎬</span>
+          <h3 class="head-title">各コンテンツ最終調整</h3>
+          <span class="head-date">7月前半</span>
         </div>
-        <p class="item-title">IVS 当日 — Day 3</p>
-        <p class="item-meta">本番3日目</p>
+        <p class="desc">BLITZ／STAGE／SPIKATHON／SQUARE／PITCH の各リードが調整</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">コンテンツ</span>
+          <span class="tag todo">未着手</span>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div class="entry task">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🛠️</span>
+          <h3 class="head-title">リハーサル／前日設営</h3>
+          <span class="head-date">6/30</span>
+        </div>
+        <p class="desc">担当: 太田／吉本</p>
+        <div class="tags">
+          <span class="tag task">タスク</span>
+          <span class="tag cat">運営・管理</span>
+          <span class="tag todo">未着手</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry event">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🎉</span>
+          <h3 class="head-title">IVS 当日 — Day 1</h3>
+          <span class="head-date">07-01（火）</span>
+        </div>
+        <p class="desc">本番1日目</p>
+        <div class="tags">
+          <span class="tag event">本番</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry event">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🎉</span>
+          <h3 class="head-title">IVS 当日 — Day 2</h3>
+          <span class="head-date">07-02（水）</span>
+        </div>
+        <p class="desc">本番2日目</p>
+        <div class="tags">
+          <span class="tag event">本番</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry event">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">🎉</span>
+          <h3 class="head-title">IVS 当日 — Day 3</h3>
+          <span class="head-date">07-03（木）</span>
+        </div>
+        <p class="desc">本番3日目（最終日）</p>
+        <div class="tags">
+          <span class="tag event">本番</span>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
