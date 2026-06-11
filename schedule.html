@@ -39,20 +39,10 @@
   h1 { font-size: 28px; margin: 16px 0 8px; color: #1f3a68; font-weight: 800; letter-spacing: -0.01em; }
   .subtitle { color: var(--muted); margin: 0 0 40px; font-size: 14px; }
 
-  /* Year heading */
-  .year {
-    font-size: 22px;
-    font-weight: 800;
-    margin: 40px 0 24px;
-    color: #1f3a68;
-    padding-left: 0;
-  }
+  .year { font-size: 22px; font-weight: 800; margin: 40px 0 24px; color: #1f3a68; }
   .year:first-of-type { margin-top: 0; }
 
-  /* Timeline (central spine with 2-axis cards) */
-  .timeline {
-    position: relative;
-  }
+  .timeline { position: relative; }
   .timeline::before {
     content: "";
     position: absolute;
@@ -105,7 +95,6 @@
     align-items: center;
   }
   .entry:last-child { margin-bottom: 0; }
-
   .entry.task > .card { grid-column: 1; }
   .entry.event > .card { grid-column: 3; }
 
@@ -122,15 +111,6 @@
   .entry.task .dot { border-color: var(--task); background: var(--task); }
   .entry.event .dot { border-color: var(--event); background: var(--event); }
 
-  @media (max-width: 720px) {
-    .timeline::before { left: 12px; transform: none; }
-    .axis-headers { grid-template-columns: 1fr; }
-    .axis-head.events { grid-column: 1; }
-    .entry { grid-template-columns: 24px 1fr; }
-    .entry.task > .card, .entry.event > .card { grid-column: 2; }
-    .dot { grid-column: 1; justify-self: start; margin-left: 4px; }
-  }
-
   .card {
     background: var(--bg-elev);
     border-radius: 12px;
@@ -143,12 +123,7 @@
     background: linear-gradient(135deg, #fff 0%, #fff5f7 100%);
   }
 
-  .head {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 6px;
-  }
+  .head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
   .head-icon { font-size: 16px; flex-shrink: 0; }
   .head-title { font-size: 15px; font-weight: 700; margin: 0; flex: 1; color: var(--text); }
   .entry.event .head-title { color: var(--event); }
@@ -158,220 +133,118 @@
   .desc:last-child { margin-bottom: 0; }
 
   .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 6px;
-  }
+  .tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 6px; }
   .tag.task { background: var(--task-bg); color: var(--task); }
   .tag.event { background: var(--event-bg); color: var(--event); }
   .tag.cat { background: var(--tag-cat-bg); color: var(--tag-cat); }
   .tag.done { background: var(--done-bg); color: var(--done); }
   .tag.progress { background: var(--warn-bg); color: var(--warn); }
   .tag.todo { background: var(--todo-bg); color: var(--todo); }
+
+  .loading { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
+  .error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 12px 16px; border-radius: 8px; }
+
+  @media (max-width: 720px) {
+    .timeline::before { left: 12px; transform: none; }
+    .axis-headers { grid-template-columns: 1fr; }
+    .axis-head.events { grid-column: 1; }
+    .entry { grid-template-columns: 24px 1fr; }
+    .entry.task > .card, .entry.event > .card { grid-column: 2; }
+    .dot { grid-column: 1; justify-self: start; margin-left: 4px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <a class="back" href="index.html">← ホームに戻る</a>
-  <h1>Timeline</h1>
-  <p class="subtitle">当日までのタスクとイベントを時系列で接続</p>
+  <h1 id="page-title">当日までのスケジュール</h1>
+  <p class="subtitle" id="page-subtitle">読み込み中...</p>
 
-  <h2 class="year">2026年</h2>
-
-  <div class="axis-headers">
-    <div class="axis-head tasks">タスク</div>
-    <div></div>
-    <div class="axis-head events">イベント・本番</div>
-  </div>
-
-  <div class="timeline">
-
-    <div class="month-label">6月</div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">📝</span>
-          <h3 class="head-title">LP公開準備</h3>
-          <span class="head-date">6月中</span>
-        </div>
-        <p class="desc">担当: 小野田／白鳥</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">マーケ・クリエイティブ</span>
-          <span class="tag progress">進行中</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">👥</span>
-          <h3 class="head-title">採用活動</h3>
-          <span class="head-date">6月中</span>
-        </div>
-        <p class="desc">担当: 小野田／松尾／紅</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">人事</span>
-          <span class="tag progress">進行中</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">📢</span>
-          <h3 class="head-title">SPIKATHON 詳細公開</h3>
-          <span class="head-date">06-15（月）</span>
-        </div>
-        <p class="desc">担当: 加藤</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">コンテンツ</span>
-          <span class="tag todo">未着手</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry event">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🎪</span>
-          <h3 class="head-title">プレイベ関東</h3>
-          <span class="head-date">06-16（火）</span>
-        </div>
-        <p class="desc">関東エリアのプレイベント</p>
-        <div class="tags">
-          <span class="tag event">プレイベ</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">📣</span>
-          <h3 class="head-title">SNS発信スケジュール策定</h3>
-          <span class="head-date">6月後半</span>
-        </div>
-        <p class="desc">担当: 有賀（Instagram）／田上（X）</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">マーケ</span>
-          <span class="tag todo">未着手</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🤝</span>
-          <h3 class="head-title">GUILD／NOMAD募集</h3>
-          <span class="head-date">6月後半</span>
-        </div>
-        <p class="desc">担当: 小澤（GUILD）／岸田（NOMAD）</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">集客</span>
-          <span class="tag todo">未着手</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="month-label">7月</div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🎬</span>
-          <h3 class="head-title">各コンテンツ最終調整</h3>
-          <span class="head-date">7月前半</span>
-        </div>
-        <p class="desc">BLITZ／STAGE／SPIKATHON／SQUARE／PITCH の各リードが調整</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">コンテンツ</span>
-          <span class="tag todo">未着手</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry task">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🛠️</span>
-          <h3 class="head-title">リハーサル／前日設営</h3>
-          <span class="head-date">6/30</span>
-        </div>
-        <p class="desc">担当: 太田／吉本</p>
-        <div class="tags">
-          <span class="tag task">タスク</span>
-          <span class="tag cat">運営・管理</span>
-          <span class="tag todo">未着手</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry event">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🎉</span>
-          <h3 class="head-title">IVS 当日 — Day 1</h3>
-          <span class="head-date">07-01（火）</span>
-        </div>
-        <p class="desc">本番1日目</p>
-        <div class="tags">
-          <span class="tag event">本番</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry event">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🎉</span>
-          <h3 class="head-title">IVS 当日 — Day 2</h3>
-          <span class="head-date">07-02（水）</span>
-        </div>
-        <p class="desc">本番2日目</p>
-        <div class="tags">
-          <span class="tag event">本番</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry event">
-      <span class="dot"></span>
-      <div class="card">
-        <div class="head">
-          <span class="head-icon">🎉</span>
-          <h3 class="head-title">IVS 当日 — Day 3</h3>
-          <span class="head-date">07-03（木）</span>
-        </div>
-        <p class="desc">本番3日目（最終日）</p>
-        <div class="tags">
-          <span class="tag event">本番</span>
-        </div>
-      </div>
-    </div>
-
+  <div id="root">
+    <div class="loading">スケジュールを読み込んでいます…</div>
   </div>
 </div>
+
+<script>
+const STATUS_LABEL = { progress: "進行中", todo: "未着手", done: "完了" };
+
+async function loadSchedule() {
+  const root = document.getElementById("root");
+  try {
+    const res = await fetch("schedule.json?t=" + Date.now());
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+
+    document.getElementById("page-title").textContent = data.title || "スケジュール";
+    document.getElementById("page-subtitle").textContent = data.subtitle || "";
+
+    const entries = (data.entries || []).slice().sort((a, b) => {
+      if (!a.sort || !b.sort) return 0;
+      return a.sort.localeCompare(b.sort);
+    });
+
+    let html = "";
+    html += `<h2 class="year">${escapeHtml(data.year)}年</h2>`;
+    html += `<div class="axis-headers">
+      <div class="axis-head tasks">タスク</div>
+      <div></div>
+      <div class="axis-head events">イベント・本番</div>
+    </div>`;
+    html += `<div class="timeline">`;
+
+    let lastMonth = null;
+    for (const e of entries) {
+      if (e.month && e.month !== lastMonth) {
+        html += `<div class="month-label">${escapeHtml(e.month)}</div>`;
+        lastMonth = e.month;
+      }
+      html += renderEntry(e);
+    }
+    html += `</div>`;
+    root.innerHTML = html;
+  } catch (err) {
+    root.innerHTML = `<div class="error">スケジュールデータの読み込みに失敗しました: ${escapeHtml(err.message)}</div>`;
+    console.error(err);
+  }
+}
+
+function renderEntry(e) {
+  const isEvent = e.type === "event";
+  const cls = isEvent ? "event" : "task";
+  const tags = [];
+  if (isEvent) {
+    tags.push(`<span class="tag event">${escapeHtml(e.label || "イベント")}</span>`);
+  } else {
+    tags.push(`<span class="tag task">タスク</span>`);
+    if (e.category) tags.push(`<span class="tag cat">${escapeHtml(e.category)}</span>`);
+    if (e.status) tags.push(`<span class="tag ${escapeHtml(e.status)}">${escapeHtml(STATUS_LABEL[e.status] || e.status)}</span>`);
+  }
+  const desc = isEvent
+    ? (e.desc ? `<p class="desc">${escapeHtml(e.desc)}</p>` : "")
+    : (e.owner ? `<p class="desc">担当: ${escapeHtml(e.owner)}</p>` : (e.desc ? `<p class="desc">${escapeHtml(e.desc)}</p>` : ""));
+  return `
+    <div class="entry ${cls}">
+      <span class="dot"></span>
+      <div class="card">
+        <div class="head">
+          <span class="head-icon">${escapeHtml(e.icon || (isEvent ? "🎉" : "📌"))}</span>
+          <h3 class="head-title">${escapeHtml(e.title || "(無題)")}</h3>
+          <span class="head-date">${escapeHtml(e.date || "")}</span>
+        </div>
+        ${desc}
+        <div class="tags">${tags.join("")}</div>
+      </div>
+    </div>`;
+}
+
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+loadSchedule();
+</script>
 </body>
 </html>
