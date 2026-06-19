@@ -29,12 +29,11 @@ graph TD
     Onoda --> MktHQ["マーケ・クリエイティブ"]
     Onoda --> PromoHQ["集客"]
     Onoda --> ContentHQ["コンテンツ統括"]
-    Onoda --> PlannerHQ["プランナー"]
     Onoda --> OpsHQ["運営・管理"]
 
     %% マーケ・クリエイティブ
     MktHQ --> Aruga["有賀 心咲<br/>D<br/>Instagram発信"]
-    MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>マーケ全般<br/>データ分析"]
+    MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>データ分析"]
     MktHQ --> Shiratori["白鳥 太智<br/>D<br/>クリエイティブ"]
     MktHQ --> Inoue["井上 颯<br/>D<br/>クリエイティブ"]
     Aruga --> Tagami["田上 睦己<br/>P<br/>X発信"]
@@ -47,6 +46,7 @@ graph TD
     Ozawa --> Yamashita["山下 翼<br/>P"]
     Ozawa --> Shimakawa["島川 哲也<br/>P"]
     NOMAD --> Kishida["岸田 宗将<br/>D"]
+    Kishida --> Azumada["東田 蒼人<br/>P"]
 
     %% コンテンツ
     ContentHQ --> BLITZ["BLITZ"]
@@ -57,9 +57,7 @@ graph TD
     BLITZ --> Kurenai["紅 優行<br/>D"]
     BLITZ --> Yamada["山田 結理奈<br/>D"]
     Kurenai --> Uji["宇治 大輝<br/>P"]
-    Yamada --> Uji
-    Kurenai --> Kawai["川合 正宗<br/>P"]
-    Yamada --> Kawai
+    Yamada --> Kawai["川合 正宗<br/>P"]
     STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
     SPIKATHON --> Kato["加藤 一路<br/>D"]
     Kato --> Murase["村瀬 智哉<br/>P"]
@@ -67,9 +65,6 @@ graph TD
     Sakamoto --> Nishikawa["西川 歩花<br/>P"]
     PITCH --> Udatsu["宇田津 蓮<br/>D"]
     Udatsu --> Saito["齋藤 杏理<br/>P"]
-
-    %% プランナー
-    PlannerHQ --> Azumada["東田 蒼人<br/>P"]
 
     %% 運営・管理
     OpsHQ --> Ota["太田 智也<br/>東西代表マネジメント"]
@@ -79,7 +74,7 @@ graph TD
     classDef group fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef tbd fill:#c0392b,stroke:#fff,color:#fff;
     class Onoda head;
-    class MktHQ,PromoHQ,ContentHQ,OpsHQ,PlannerHQ group;
+    class MktHQ,PromoHQ,ContentHQ,OpsHQ group;
     class BLITZ,STAGE,SPIKATHON,SQUARE,PITCH group;
     class GUILD,NOMAD group;
     class Yoshimoto tbd;
@@ -136,9 +131,7 @@ graph TD
       BLITZ --> Kurenai2[紅 優行]
       BLITZ --> Yamada2[山田 結理奈]
       Kurenai2 --> Uji2[宇治 大輝]
-      Yamada2 --> Uji2
-      Kurenai2 --> Kawai2[川合 正宗]
-      Yamada2 --> Kawai2
+      Yamada2 --> Kawai2[川合 正宗]
     end
 
     subgraph SG_HR ["人事組織"]
