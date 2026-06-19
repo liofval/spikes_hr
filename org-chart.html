@@ -121,24 +121,8 @@ graph TD
       HAIBATSU[派閥]
       HAIBATSU --> ArugaP[有賀 心咲]
       HAIBATSU --> KatoP[加藤 一路]
-      ArugaP --> TagamiP[田上 睦己]
-      ArugaP --> NishikawaP[西川 歩花]
-      ArugaP --> SaitoP[齋藤 杏理]
-      ArugaP --> AzumadaP[東田 蒼人]
-      ArugaP --> YamashitaP[山下 翼]
-      ArugaP --> ShimakawaP[島川 哲也]
-      ArugaP --> UjiP[宇治 大輝]
-      ArugaP --> KawaiP[川合 正宗]
-      ArugaP --> MuraseP[村瀬 智哉]
-      KatoP --> TagamiP
-      KatoP --> NishikawaP
-      KatoP --> SaitoP
-      KatoP --> AzumadaP
-      KatoP --> YamashitaP
-      KatoP --> ShimakawaP
-      KatoP --> UjiP
-      KatoP --> KawaiP
-      KatoP --> MuraseP
+      ArugaP --> PALL["P<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬"]
+      KatoP --> PALL
     end
 
     subgraph SG_CONT ["コンテンツ"]
@@ -173,8 +157,8 @@ graph TD
 
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
-    class SNS,DATA,EV,LP,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,HAIBATSU role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Inoue2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2,Kawai2,Murase2,ArugaP,KatoP,TagamiP,NishikawaP,SaitoP,AzumadaP,YamashitaP,ShimakawaP,UjiP,KawaiP,MuraseP person;
+    class SNS,DATA,EV,LP,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,HAIBATSU,PALL role;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Inoue2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2,Kawai2,Murase2,ArugaP,KatoP person;
 </div>
 </body>
 </html>
