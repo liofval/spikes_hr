@@ -10,8 +10,8 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 %%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 25}, 'themeVariables': {'fontSize': '11px'}}}%%
 graph TD
     R["代表<br/>小野田・小澤・岸田"]
-    D["ディレクター<br/>有賀・立崎・紅・山田・松尾<br/>加藤・坂元・宇田津・白鳥"]
-    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治"]
+    D["ディレクター<br/>有賀・立崎・紅・山田・松尾<br/>加藤・坂元・宇田津・白鳥・井上"]
+    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬"]
     A["アシスタント（当日企画補佐）<br/>（TBD）"]
     C["クルー（当日会場補佐）<br/>（TBD）"]
     R --> D --> P --> A --> C
@@ -36,6 +36,7 @@ graph TD
     MktHQ --> Aruga["有賀 心咲<br/>D<br/>Instagram発信"]
     MktHQ --> Tatsuzaki["立崎 乃衣<br/>D<br/>マーケ全般<br/>データ分析"]
     MktHQ --> Shiratori["白鳥 太智<br/>D<br/>クリエイティブ"]
+    MktHQ --> Inoue["井上 颯<br/>D<br/>クリエイティブ"]
     Aruga --> Tagami["田上 睦己<br/>P<br/>X発信"]
     Tatsuzaki --> Tagami
 
@@ -57,8 +58,11 @@ graph TD
     BLITZ --> Yamada["山田 結理奈<br/>D"]
     Kurenai --> Uji["宇治 大輝<br/>P"]
     Yamada --> Uji
+    Kurenai --> Kawai["川合 正宗<br/>P"]
+    Yamada --> Kawai
     STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
     SPIKATHON --> Kato["加藤 一路<br/>D"]
+    Kato --> Murase["村瀬 智哉<br/>P"]
     SQUARE --> Sakamoto["坂元 柾毅<br/>D"]
     Sakamoto --> Nishikawa["西川 歩花<br/>P"]
     PITCH --> Udatsu["宇田津 蓮<br/>D"]
@@ -98,6 +102,7 @@ graph TD
       DATA --> Tatsuzaki2[立崎 乃衣]
       LP --> Onoda3[小野田 芽依]
       CREATIVE --> Shiratori2[白鳥 太智]
+      CREATIVE --> Inoue2[井上 颯]
       CREATIVE --> Shimakawa3[島川 哲也]
     end
 
@@ -125,12 +130,15 @@ graph TD
       Udatsu2 --> Saito2[齋藤 杏理]
       STAGE --> Matsuo2[松尾 妃奈乃]
       SPIKATHON --> Kato2[加藤 一路]
+      Kato2 --> Murase2[村瀬 智哉]
       SQUARE --> Sakamoto2[坂元 柾毅]
       Sakamoto2 --> Nishikawa2[西川 歩花]
       BLITZ --> Kurenai2[紅 優行]
       BLITZ --> Yamada2[山田 結理奈]
       Kurenai2 --> Uji2[宇治 大輝]
       Yamada2 --> Uji2
+      Kurenai2 --> Kawai2[川合 正宗]
+      Yamada2 --> Kawai2
     end
 
     subgraph SG_HR ["人事組織"]
@@ -143,7 +151,7 @@ graph TD
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
     class SNS,DATA,EV,LP,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2 person;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Inoue2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2,Kawai2,Murase2 person;
 ```
 
 ## 元データ
