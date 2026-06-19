@@ -69,6 +69,8 @@ graph TD
     %% 運営・管理
     OpsHQ --> Ota["太田 智也<br/>東西代表マネジメント"]
     OpsHQ --> Yoshimoto["吉本<br/>オペレーション（TBD）"]
+    Ota --> Onoda
+    Yoshimoto --> Onoda
 
     classDef head fill:#1f3a68,stroke:#fff,color:#fff;
     classDef group fill:#2e5aa8,stroke:#fff,color:#fff;
