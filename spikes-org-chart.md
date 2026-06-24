@@ -11,7 +11,7 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 graph TD
     R["代表<br/>小野田・小澤・岸田"]
     D["ディレクター<br/>有賀・立崎・紅・山田・松尾<br/>加藤・坂元・宇田津・白鳥・井上"]
-    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬"]
+    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬・吉岡"]
     A["アシスタント（当日企画補佐）<br/>（TBD）"]
     C["クルー（当日会場補佐）<br/>（TBD）"]
     R --> D --> P --> A --> C
@@ -59,6 +59,7 @@ graph TD
     Kurenai --> Uji["宇治 大輝<br/>P"]
     Yamada --> Kawai["川合 正宗<br/>P"]
     STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
+    Matsuo --> Yoshioka["吉岡 夏輝<br/>P"]
     SPIKATHON --> Kato["加藤 一路<br/>D"]
     Kato --> Murase["村瀬 智哉<br/>P"]
     SQUARE --> Sakamoto["坂元 柾毅<br/>D"]
@@ -131,6 +132,7 @@ graph TD
       PITCH --> Udatsu2[宇田津 蓮]
       Udatsu2 --> Saito2[齋藤 杏理]
       STAGE --> Matsuo2[松尾 妃奈乃]
+      Matsuo2 --> Yoshioka2[吉岡 夏輝]
       SPIKATHON --> Kato2[加藤 一路]
       Kato2 --> Murase2[村瀬 智哉]
       SQUARE --> Sakamoto2[坂元 柾毅]
@@ -151,7 +153,7 @@ graph TD
     classDef role fill:#2e5aa8,stroke:#fff,color:#fff;
     classDef person fill:#f2b84b,stroke:#333,color:#111;
     class SNS,DATA,EV,LP,GUILD,NOMAD,CREATIVE,PITCH,STAGE,SPIKATHON,NW,SQUARE,BLITZ,ROUND,MARKET,POPUP,RECRUIT,HAIBATSU,PALL role;
-    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Inoue2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2,Kawai2,Murase2,ArugaP,KatoP person;
+    class Aruga2,Tagami2,Tatsuzaki2,Ozawa2,Yamashita2,Shimakawa2,Shimakawa3,Kishida2,Shiratori2,Inoue2,Udatsu2,Saito2,Matsuo2,Matsuo3,Kato2,Sakamoto2,Nishikawa2,Kurenai2,Kurenai3,Yamada2,Onoda2,Onoda3,Uji2,Kawai2,Murase2,ArugaP,KatoP,Yoshioka2 person;
 ```
 
 ## 元データ
