@@ -7,11 +7,18 @@
   body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 1200px; margin: 24px auto; padding: 0 16px; color: #1a1a1a; }
   h1 { font-size: 22px; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 16px; }
-  th { background: #2e5aa8; color: #fff; padding: 10px 12px; text-align: left; border: 1px solid #1f3a68; }
-  td { padding: 8px 12px; border: 1px solid #d1d5db; vertical-align: top; }
-  td.section { background: #1f3a68; color: #fff; font-weight: bold; text-align: center; vertical-align: middle; white-space: pre-line; }
-  tr.empty td { background: #f9fafb; height: 30px; }
-  td.task { line-height: 1.7; }
+  th { background: #3a3a3a; color: #fff; padding: 10px 12px; text-align: center; border: 1px solid #222; }
+  td { padding: 8px 12px; border: 1px solid #c0c0c0; vertical-align: middle; text-align: center; }
+  td.section { font-weight: bold; color: #fff; }
+  td.role { text-align: center; }
+  td.task { text-align: center; line-height: 1.8; }
+  tr.empty td { background: #fafafa; height: 28px; }
+  .s-zentai  { background: #c47a7a; color: #fff; }
+  .s-mori    { background: #e8d890; color: #333; }
+  .s-stage   { background: #b098b8; color: #fff; }
+  .s-blitz   { background: #a8c4d8; color: #333; }
+  .s-square  { background: #a8c4d8; color: #333; }
+  .s-koho    { background: #e8d890; color: #333; }
 </style>
 </head>
 <body>
@@ -20,103 +27,182 @@
 <table>
   <thead>
     <tr>
-      <th style="width:13%"></th>
-      <th style="width:24%">役割</th>
-      <th style="width:20%">スタッフ</th>
+      <th style="width:12%"></th>
+      <th style="width:22%">役割</th>
+      <th style="width:18%">スタッフ</th>
       <th>タスク詳細</th>
     </tr>
   </thead>
   <tbody>
 
-    <!-- 全体 -->
+    <!-- ===== 全体 (4行) ===== -->
     <tr>
-      <td class="section" rowspan="4">全体</td>
-      <td>全体責任者</td><td>アサオ</td><td>全体責任者</td>
+      <td class="section s-zentai" rowspan="4">全体</td>
+      <td class="role">全体責任者</td>
+      <td>アサオ</td>
+      <td class="task">全体責任者</td>
     </tr>
-    <tr><td>スポンサー統括</td><td>イクモ</td><td>スポンサー企業対応</td></tr>
-    <tr><td>運営統括</td><td>オオタ</td><td>全体指示/舞台指示</td></tr>
-    <tr><td>運営副統括</td><td>ヨシモト</td><td>全体指示/ブース・受付指示</td></tr>
+    <tr>
+      <td class="role">スポンサー統括</td>
+      <td>イクモ</td>
+      <td class="task">スポンサー企業対応</td>
+    </tr>
+    <tr>
+      <td class="role">運営統括</td>
+      <td>オオタ</td>
+      <td class="task">全体指示/舞台指示</td>
+    </tr>
+    <tr>
+      <td class="role">運営副統括</td>
+      <td>ヨシモト</td>
+      <td class="task">全体指示/ブース・受付指示</td>
+    </tr>
 
-    <!-- 盛り上げ隊長兼受付兼GUILD -->
+    <!-- ===== 盛り上げ隊長兼受付兼GUILD (8行) ===== -->
     <tr>
-      <td class="section" rowspan="8">盛り上げ隊長&#10;兼受付&#10;兼GUILD</td>
-      <td>盛り上げ隊長</td><td>オノダ</td><td>スタッフ管理</td>
+      <td class="section s-mori" rowspan="8">盛り上げ隊長<br>兼受付<br>兼GUILD</td>
+      <td class="role">盛り上げ隊長</td>
+      <td>オノダ</td>
+      <td class="task">スタッフ管理</td>
     </tr>
-    <tr><td>インフォメーション/受付</td><td>シマカワ</td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr><td>GUILD担当</td><td>オザワ</td><td></td></tr>
-    <tr><td></td><td>ヤマシタ</td><td></td></tr>
+    <tr>
+      <td class="role" rowspan="5">インフォメーション/受付</td>
+      <td>シマカワ</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td><td></td></tr>
+    <tr class="empty"><td></td><td></td></tr>
+    <tr class="empty"><td></td><td></td></tr>
+    <tr class="empty"><td></td><td></td></tr>
+    <tr>
+      <td class="role" rowspan="2">GUILD担当</td>
+      <td>オザワ</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ヤマシタ</td>
+      <td></td>
+    </tr>
 
-    <!-- ステージ -->
+    <!-- ===== ステージ (21行) ===== -->
     <tr>
-      <td class="section" rowspan="21">ステージ</td>
-      <td>舞台統括/セッション統括</td><td>マツオ</td>
-      <td class="task">舞台進行・Q出し<br>舞台袖出演者管理<br>マイク管理<br>スライド管理</td>
+      <td class="section s-stage" rowspan="21">ステージ</td>
+      <td class="role">舞台統括/セッション統括</td>
+      <td>マツオ</td>
+      <td class="task" rowspan="6">舞台進行・Q出し<br>舞台袖出演者管理<br>マイク管理<br>スライド管理</td>
     </tr>
-    <tr><td>舞台副統括/スパイカソン統括</td><td>ヒガシダ</td><td></td></tr>
-    <tr><td>舞台運営補助</td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr><td>出演者対応統括</td><td>サカモト</td>
-      <td class="task">登壇者迎え<br>登壇者への説明<br>控室・舞台案内</td>
+    <tr>
+      <td class="role">舞台副統括/スパイカソン統括</td>
+      <td>ヒガシダ</td>
     </tr>
-    <tr><td>出演者対応副統括</td><td>サイトウ</td><td></td></tr>
-    <tr><td>出演者対応/ピッチ統括</td><td>ウダツ</td><td></td></tr>
-    <tr><td>出演者対応/スパイカソン統括</td><td>カトウ</td><td></td></tr>
-    <tr><td>出演者対応</td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr><td>客席案内</td><td></td><td>席に人を集める</td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr><td>舞台管理</td><td>アイ（太田外注）</td><td></td></tr>
-    <tr><td></td><td>シゲタ（太田外注）</td><td></td></tr>
-    <tr><td>音響/カメラマン</td><td>4-5名（太田外注）</td><td></td></tr>
+    <tr>
+      <td class="role" rowspan="4">舞台運営補助</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
 
-    <!-- Blitz -->
     <tr>
-      <td class="section" rowspan="8">Blitz</td>
-      <td>Blitz統括</td><td>ヤマダ</td>
-      <td class="task">出演者対応<br>進行<br>MC<br>来場者巻き込み</td>
+      <td class="role">出演者対応統括</td>
+      <td>サカモト</td>
+      <td class="task" rowspan="7">登壇者迎え<br>登壇者への説明<br>控室・舞台案内</td>
     </tr>
-    <tr><td></td><td>ベニ</td><td></td></tr>
-    <tr><td></td><td>ウジ</td><td></td></tr>
-    <tr><td></td><td>カワイ</td><td></td></tr>
-    <tr><td>Blitz</td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
+    <tr>
+      <td class="role">出演者対応副統括</td>
+      <td>サイトウ</td>
+    </tr>
+    <tr>
+      <td class="role">出演者対応/ピッチ統括</td>
+      <td>ウダツ</td>
+    </tr>
+    <tr>
+      <td class="role">出演者対応/スパイカソン統括</td>
+      <td>カトウ</td>
+    </tr>
+    <tr>
+      <td class="role" rowspan="3">出演者対応</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
 
-    <!-- SQUARE -->
     <tr>
-      <td class="section" rowspan="6">SQUARE</td>
-      <td>SQUARE統括</td><td>サカモト</td>
-      <td class="task">出演者対応<br>進行<br>来場者巻き込み</td>
+      <td class="role" rowspan="5">客席案内</td>
+      <td></td>
+      <td class="task" rowspan="5">席に人を集める</td>
     </tr>
-    <tr><td></td><td>ニシカワ</td><td></td></tr>
-    <tr><td></td><td>キシダ</td><td></td></tr>
-    <tr><td>SQUARE</td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
 
-    <!-- 広報 -->
     <tr>
-      <td class="section" rowspan="8">広報</td>
-      <td>SNS</td><td>アルガ</td><td>SPIKESに人を集める</td>
+      <td class="role" rowspan="2">舞台管理</td>
+      <td>アイ（太田外注）</td>
+      <td></td>
     </tr>
-    <tr><td></td><td>ノイ</td><td></td></tr>
-    <tr><td></td><td>シラトリ</td><td></td></tr>
-    <tr><td></td><td>タノウエ</td><td></td></tr>
-    <tr><td>学生巻き込み</td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
-    <tr class="empty"><td></td><td></td><td></td></tr>
+    <tr>
+      <td>シゲタ（太田外注）</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="role">音響/カメラマン</td>
+      <td>4-5名（太田外注）</td>
+      <td></td>
+    </tr>
+
+    <!-- ===== Blitz (8行) ===== -->
+    <tr>
+      <td class="section s-blitz" rowspan="8">Blitz</td>
+      <td class="role" rowspan="4">Blitz統括</td>
+      <td>ヤマダ</td>
+      <td class="task" rowspan="8">出演者対応<br>進行<br>MC<br>来場者巻き込み</td>
+    </tr>
+    <tr><td>ベニ</td></tr>
+    <tr><td>ウジ</td></tr>
+    <tr><td>カワイ</td></tr>
+    <tr>
+      <td class="role" rowspan="4">Blitz</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+
+    <!-- ===== SQUARE (6行) ===== -->
+    <tr>
+      <td class="section s-square" rowspan="6">SQUARE</td>
+      <td class="role" rowspan="3">SQUARE統括</td>
+      <td>サカモト</td>
+      <td class="task" rowspan="6">出演者対応<br>進行<br>来場者巻き込み</td>
+    </tr>
+    <tr><td>ニシカワ</td></tr>
+    <tr><td>キシダ</td></tr>
+    <tr>
+      <td class="role" rowspan="3">SQUARE</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+
+    <!-- ===== 広報 (8行) ===== -->
+    <tr>
+      <td class="section s-koho" rowspan="8">広報</td>
+      <td class="role" rowspan="4">SNS</td>
+      <td>アルガ</td>
+      <td class="task" rowspan="8">SPIKESに人を集める</td>
+    </tr>
+    <tr><td>ノイ</td></tr>
+    <tr><td>シラトリ</td></tr>
+    <tr><td>タノウエ</td></tr>
+    <tr>
+      <td class="role" rowspan="4">学生巻き込み</td>
+      <td></td>
+    </tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
+    <tr class="empty"><td></td></tr>
 
   </tbody>
 </table>
