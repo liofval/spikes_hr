@@ -11,7 +11,7 @@ Notion「メンバー」ページとGoogle Sheets「組織」タブを統合。
 graph TD
     R["代表<br/>小野田・小澤・岸田"]
     D["ディレクター<br/>有賀・立崎・紅・山田・松尾<br/>加藤・坂元・宇田津・白鳥・井上"]
-    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬・吉岡"]
+    P["プランナー<br/>田上・西川・齋藤・東田<br/>山下・島川・宇治・川合・村瀬・吉岡※"]
     A["アシスタント（当日企画補佐）<br/>（TBD）"]
     C["クルー（当日会場補佐）<br/>（TBD）"]
     R --> D --> P --> A --> C
@@ -42,6 +42,9 @@ graph TD
     %% 集客
     PromoHQ --> GUILD["GUILD"]
     PromoHQ --> NOMAD["NOMAD"]
+    PromoHQ --> POPUP["POPUP"]
+    POPUP --> Ozawa
+    Ozawa --> Yoshioka["吉岡 夏輝※<br/>P（当日）"]
     GUILD --> Ozawa["小澤 剛<br/>D"]
     Ozawa --> Yamashita["山下 翼<br/>P"]
     Ozawa --> Shimakawa["島川 哲也<br/>P"]
@@ -59,7 +62,6 @@ graph TD
     Kurenai --> Uji["宇治 大輝<br/>P"]
     Yamada --> Kawai["川合 正宗<br/>P"]
     STAGE --> Matsuo["松尾 妃奈乃<br/>D"]
-    Matsuo --> Yoshioka["吉岡 夏輝<br/>P"]
     SPIKATHON --> Kato["加藤 一路<br/>D"]
     Kato --> Murase["村瀬 智哉<br/>P"]
     SQUARE --> Sakamoto["坂元 柾毅<br/>D"]
@@ -79,7 +81,7 @@ graph TD
     class Onoda head;
     class MktHQ,PromoHQ,ContentHQ,OpsHQ group;
     class BLITZ,STAGE,SPIKATHON,SQUARE,PITCH group;
-    class GUILD,NOMAD group;
+    class GUILD,NOMAD,POPUP group;
     class Yoshimoto tbd;
 ```
 
@@ -107,10 +109,12 @@ graph TD
     subgraph SG_PROMO ["集客"]
       GUILD[GUILD]
       NOMAD[NOMAD]
-      GUILD --> POPUP[POPUP]
       GUILD --> Ozawa2[小澤 剛]
       Ozawa2 --> Yamashita2[山下 翼]
       Ozawa2 --> Shimakawa2[島川 哲也]
+      POPUP[POPUP]
+      POPUP --> Ozawa2
+      Ozawa2 --> Yoshioka2[吉岡 夏輝※]
       NOMAD --> Kishida2[岸田 宗将]
       HAIBATSU[派閥]
       HAIBATSU --> ArugaP[有賀 心咲]
@@ -132,7 +136,6 @@ graph TD
       PITCH --> Udatsu2[宇田津 蓮]
       Udatsu2 --> Saito2[齋藤 杏理]
       STAGE --> Matsuo2[松尾 妃奈乃]
-      Matsuo2 --> Yoshioka2[吉岡 夏輝]
       SPIKATHON --> Kato2[加藤 一路]
       Kato2 --> Murase2[村瀬 智哉]
       SQUARE --> Sakamoto2[坂元 柾毅]
