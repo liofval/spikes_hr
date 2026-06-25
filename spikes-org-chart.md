@@ -80,7 +80,7 @@ graph TD
     class MktHQ,PromoHQ,ContentHQ,OpsHQ group;
     class BLITZ,STAGE,SPIKATHON,SQUARE,PITCH group;
     class GUILD,NOMAD group;
-    class Yoshimoto tbd;
+    class Yoshimoto,Ota tbd;
 ```
 
 ## 企画コンテンツ × 担当者マップ
